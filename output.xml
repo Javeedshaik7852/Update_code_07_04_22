@@ -1,0 +1,3575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220407 17:28:11.393" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="C:\Users\shajavee\PycharmProjects\Robotframework\test.robot">
+<test id="s1-t1" name="Creating_File" line="14">
+<kw name="Create File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220407 17:28:11.562" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:11.562" endtime="20220407 17:28:11.562"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:11.562" endtime="20220407 17:28:11.562"/>
+</test>
+<test id="s1-t2" name="Capturing_Links" line="16">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220407 17:28:11.562" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20220407 17:28:11.562" endtime="20220407 17:28:19.201"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220407 17:28:19.205" endtime="20220407 17:28:19.341"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:q</arg>
+<arg>robotframework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:19.341" level="INFO">Typing text 'robotframework' into text field 'name:q'.</msg>
+<status status="PASS" starttime="20220407 17:28:19.341" endtime="20220407 17:28:19.472"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220407 17:28:24.479" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220407 17:28:19.472" endtime="20220407 17:28:24.479"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[2]/div[2]/div[5]/center/input[1]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:24.479" level="INFO">Clicking button 'xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[2]/div[2]/div[5]/center/input[1]'.</msg>
+<status status="PASS" starttime="20220407 17:28:24.479" endtime="20220407 17:28:30.145"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${AllLinksCount}</var>
+<arg>xpath://a</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.161" level="INFO">${AllLinksCount} = 142</msg>
+<status status="PASS" starttime="20220407 17:28:30.145" endtime="20220407 17:28:30.161"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${AllLinksCount}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.161" endtime="20220407 17:28:30.161"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{LinkItems}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220407 17:28:30.161" level="INFO">@{LinkItems} = [ ]</msg>
+<status status="PASS" starttime="20220407 17:28:30.161" endtime="20220407 17:28:30.161"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.161" endtime="20220407 17:28:30.169"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${AllLinksCount}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.191" level="INFO">${LinkText} = Skip to main content</msg>
+<status status="PASS" starttime="20220407 17:28:30.169" endtime="20220407 17:28:30.191"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.191" endtime="20220407 17:28:30.191"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.199" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.199" endtime="20220407 17:28:30.199"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.169" endtime="20220407 17:28:30.199"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.227" level="INFO">${LinkText} = Accessibility help</msg>
+<status status="PASS" starttime="20220407 17:28:30.199" endtime="20220407 17:28:30.228"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.228" endtime="20220407 17:28:30.228"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.228" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.228" endtime="20220407 17:28:30.228"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.199" endtime="20220407 17:28:30.228"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.242" level="INFO">${LinkText} = Accessibility feedback</msg>
+<status status="PASS" starttime="20220407 17:28:30.228" endtime="20220407 17:28:30.242"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.258" endtime="20220407 17:28:30.258"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.258" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.258" endtime="20220407 17:28:30.258"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.228" endtime="20220407 17:28:30.258"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.286" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.258" endtime="20220407 17:28:30.286"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.286" endtime="20220407 17:28:30.286"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.286" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.286" endtime="20220407 17:28:30.286"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.258" endtime="20220407 17:28:30.286"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.318" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.286" endtime="20220407 17:28:30.319"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.319" endtime="20220407 17:28:30.319"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.320" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.319" endtime="20220407 17:28:30.321"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.286" endtime="20220407 17:28:30.321"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.347" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.321" endtime="20220407 17:28:30.347"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.347" endtime="20220407 17:28:30.347"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.347" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.347" endtime="20220407 17:28:30.347"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.321" endtime="20220407 17:28:30.347"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.375" level="INFO">${LinkText} = Sign in</msg>
+<status status="PASS" starttime="20220407 17:28:30.347" endtime="20220407 17:28:30.375"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.375" endtime="20220407 17:28:30.383"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.383" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.383" endtime="20220407 17:28:30.383"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.347" endtime="20220407 17:28:30.383"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.408" level="INFO">${LinkText} = Videos</msg>
+<status status="PASS" starttime="20220407 17:28:30.383" endtime="20220407 17:28:30.408"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.408" endtime="20220407 17:28:30.408"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.416" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.408" endtime="20220407 17:28:30.416"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.383" endtime="20220407 17:28:30.416"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.440" level="INFO">${LinkText} = Images</msg>
+<status status="PASS" starttime="20220407 17:28:30.416" endtime="20220407 17:28:30.440"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.440" endtime="20220407 17:28:30.440"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.450" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.440" endtime="20220407 17:28:30.450"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.416" endtime="20220407 17:28:30.450"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.479" level="INFO">${LinkText} = Books</msg>
+<status status="PASS" starttime="20220407 17:28:30.450" endtime="20220407 17:28:30.479"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.479" endtime="20220407 17:28:30.479"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.487" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.479" endtime="20220407 17:28:30.487"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.450" endtime="20220407 17:28:30.487"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.516" level="INFO">${LinkText} = News</msg>
+<status status="PASS" starttime="20220407 17:28:30.487" endtime="20220407 17:28:30.516"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.516" endtime="20220407 17:28:30.516"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.524" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.516" endtime="20220407 17:28:30.524"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.487" endtime="20220407 17:28:30.524"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.548" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.524" endtime="20220407 17:28:30.548"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.548" endtime="20220407 17:28:30.548"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.556" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.548" endtime="20220407 17:28:30.556"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.524" endtime="20220407 17:28:30.556"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.586" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.556" endtime="20220407 17:28:30.586"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.586" endtime="20220407 17:28:30.586"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.589" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.586" endtime="20220407 17:28:30.589"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.556" endtime="20220407 17:28:30.589"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.620" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.589" endtime="20220407 17:28:30.620"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.620" endtime="20220407 17:28:30.620"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.624" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.620" endtime="20220407 17:28:30.624"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.589" endtime="20220407 17:28:30.624"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.648" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.624" endtime="20220407 17:28:30.648"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.648" endtime="20220407 17:28:30.656"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.656" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.656" endtime="20220407 17:28:30.656"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.624" endtime="20220407 17:28:30.656"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.680" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.656" endtime="20220407 17:28:30.680"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.680" endtime="20220407 17:28:30.680"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.680" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.680" endtime="20220407 17:28:30.680"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.656" endtime="20220407 17:28:30.680"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.715" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.680" endtime="20220407 17:28:30.715"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.715" endtime="20220407 17:28:30.715"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.715" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.715" endtime="20220407 17:28:30.715"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.680" endtime="20220407 17:28:30.715"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.740" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.715" endtime="20220407 17:28:30.740"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.740" endtime="20220407 17:28:30.740"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.740" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.740" endtime="20220407 17:28:30.740"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.715" endtime="20220407 17:28:30.740"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.772" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.740" endtime="20220407 17:28:30.772"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.772" endtime="20220407 17:28:30.772"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.772" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.772" endtime="20220407 17:28:30.772"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.740" endtime="20220407 17:28:30.772"/>
+</iter>
+<iter>
+<var name="${i}">20</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.808" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.772" endtime="20220407 17:28:30.808"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.808" endtime="20220407 17:28:30.808"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.808" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.808" endtime="20220407 17:28:30.808"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.772" endtime="20220407 17:28:30.808"/>
+</iter>
+<iter>
+<var name="${i}">21</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.841" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.808" endtime="20220407 17:28:30.841"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.841" endtime="20220407 17:28:30.841"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.841" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.841" endtime="20220407 17:28:30.841"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.808" endtime="20220407 17:28:30.841"/>
+</iter>
+<iter>
+<var name="${i}">22</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.883" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.841" endtime="20220407 17:28:30.883"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.883" endtime="20220407 17:28:30.883"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.883" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.883" endtime="20220407 17:28:30.883"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.841" endtime="20220407 17:28:30.883"/>
+</iter>
+<iter>
+<var name="${i}">23</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.907" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.883" endtime="20220407 17:28:30.907"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.907" endtime="20220407 17:28:30.907"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.907" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.907" endtime="20220407 17:28:30.907"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.883" endtime="20220407 17:28:30.907"/>
+</iter>
+<iter>
+<var name="${i}">24</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.947" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.907" endtime="20220407 17:28:30.947"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.947" endtime="20220407 17:28:30.947"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.947" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.947" endtime="20220407 17:28:30.947"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.907" endtime="20220407 17:28:30.947"/>
+</iter>
+<iter>
+<var name="${i}">25</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.964" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.947" endtime="20220407 17:28:30.964"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.964" endtime="20220407 17:28:30.964"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.964" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.964" endtime="20220407 17:28:30.964"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.947" endtime="20220407 17:28:30.964"/>
+</iter>
+<iter>
+<var name="${i}">26</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:30.998" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.964" endtime="20220407 17:28:30.998"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:30.998" endtime="20220407 17:28:30.998"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:30.998" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:30.998" endtime="20220407 17:28:30.998"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.964" endtime="20220407 17:28:30.998"/>
+</iter>
+<iter>
+<var name="${i}">27</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.024" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:30.998" endtime="20220407 17:28:31.024"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.024" endtime="20220407 17:28:31.024"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.024" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.024" endtime="20220407 17:28:31.024"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:30.998" endtime="20220407 17:28:31.024"/>
+</iter>
+<iter>
+<var name="${i}">28</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.056" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.024" endtime="20220407 17:28:31.056"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.056" endtime="20220407 17:28:31.056"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.056" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.056" endtime="20220407 17:28:31.056"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.024" endtime="20220407 17:28:31.056"/>
+</iter>
+<iter>
+<var name="${i}">29</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.089" level="INFO">${LinkText} = Robot Framework
+https://robotframework.org</msg>
+<status status="PASS" starttime="20220407 17:28:31.056" endtime="20220407 17:28:31.089"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.089" endtime="20220407 17:28:31.089"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.089" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.089" endtime="20220407 17:28:31.089"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.056" endtime="20220407 17:28:31.089"/>
+</iter>
+<iter>
+<var name="${i}">30</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.125" level="INFO">${LinkText} = User Guide</msg>
+<status status="PASS" starttime="20220407 17:28:31.089" endtime="20220407 17:28:31.125"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.125" endtime="20220407 17:28:31.125"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.125" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.125" endtime="20220407 17:28:31.125"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.089" endtime="20220407 17:28:31.125"/>
+</iter>
+<iter>
+<var name="${i}">31</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.142" level="INFO">${LinkText} = More results from robotframework.org »</msg>
+<status status="PASS" starttime="20220407 17:28:31.125" endtime="20220407 17:28:31.142"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.142" endtime="20220407 17:28:31.142"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.158" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.142" endtime="20220407 17:28:31.158"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.125" endtime="20220407 17:28:31.158"/>
+</iter>
+<iter>
+<var name="${i}">32</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.182" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.158" endtime="20220407 17:28:31.182"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.182" endtime="20220407 17:28:31.182"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.182" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.182" endtime="20220407 17:28:31.182"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.158" endtime="20220407 17:28:31.182"/>
+</iter>
+<iter>
+<var name="${i}">33</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.200" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.182" endtime="20220407 17:28:31.200"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.200" endtime="20220407 17:28:31.200"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.200" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.200" endtime="20220407 17:28:31.200"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.182" endtime="20220407 17:28:31.200"/>
+</iter>
+<iter>
+<var name="${i}">34</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.240" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.200" endtime="20220407 17:28:31.240"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.240" endtime="20220407 17:28:31.241"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.241" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.241" endtime="20220407 17:28:31.241"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.200" endtime="20220407 17:28:31.241"/>
+</iter>
+<iter>
+<var name="${i}">35</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.260" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.241" endtime="20220407 17:28:31.260"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.260" endtime="20220407 17:28:31.260"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.275" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.260" endtime="20220407 17:28:31.275"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.241" endtime="20220407 17:28:31.275"/>
+</iter>
+<iter>
+<var name="${i}">36</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.302" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.275" endtime="20220407 17:28:31.302"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.302" endtime="20220407 17:28:31.302"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.302" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.302" endtime="20220407 17:28:31.302"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.275" endtime="20220407 17:28:31.302"/>
+</iter>
+<iter>
+<var name="${i}">37</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.324" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.302" endtime="20220407 17:28:31.324"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.324" endtime="20220407 17:28:31.324"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.324" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.324" endtime="20220407 17:28:31.324"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.302" endtime="20220407 17:28:31.324"/>
+</iter>
+<iter>
+<var name="${i}">38</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.356" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.324" endtime="20220407 17:28:31.356"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.356" endtime="20220407 17:28:31.356"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.356" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.356" endtime="20220407 17:28:31.356"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.324" endtime="20220407 17:28:31.356"/>
+</iter>
+<iter>
+<var name="${i}">39</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.391" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.356" endtime="20220407 17:28:31.391"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.391" endtime="20220407 17:28:31.391"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.391" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.391" endtime="20220407 17:28:31.391"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.356" endtime="20220407 17:28:31.391"/>
+</iter>
+<iter>
+<var name="${i}">40</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.407" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.391" endtime="20220407 17:28:31.407"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.407" endtime="20220407 17:28:31.407"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.423" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.407" endtime="20220407 17:28:31.423"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.391" endtime="20220407 17:28:31.423"/>
+</iter>
+<iter>
+<var name="${i}">41</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.440" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.423" endtime="20220407 17:28:31.440"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.440" endtime="20220407 17:28:31.440"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.440" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.440" endtime="20220407 17:28:31.440"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.423" endtime="20220407 17:28:31.440"/>
+</iter>
+<iter>
+<var name="${i}">42</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.475" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.440" endtime="20220407 17:28:31.475"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.475" endtime="20220407 17:28:31.475"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.475" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.475" endtime="20220407 17:28:31.475"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.440" endtime="20220407 17:28:31.475"/>
+</iter>
+<iter>
+<var name="${i}">43</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.508" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.475" endtime="20220407 17:28:31.508"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.508" endtime="20220407 17:28:31.508"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.508" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.508" endtime="20220407 17:28:31.508"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.475" endtime="20220407 17:28:31.508"/>
+</iter>
+<iter>
+<var name="${i}">44</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.540" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.508" endtime="20220407 17:28:31.540"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.540" endtime="20220407 17:28:31.540"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.540" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.540" endtime="20220407 17:28:31.540"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.508" endtime="20220407 17:28:31.540"/>
+</iter>
+<iter>
+<var name="${i}">45</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.558" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.540" endtime="20220407 17:28:31.558"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.558" endtime="20220407 17:28:31.558"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.574" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.558" endtime="20220407 17:28:31.574"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.540" endtime="20220407 17:28:31.574"/>
+</iter>
+<iter>
+<var name="${i}">46</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.602" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.576" endtime="20220407 17:28:31.602"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.602" endtime="20220407 17:28:31.604"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.604" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.604" endtime="20220407 17:28:31.604"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.574" endtime="20220407 17:28:31.604"/>
+</iter>
+<iter>
+<var name="${i}">47</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.624" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.604" endtime="20220407 17:28:31.624"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.624" endtime="20220407 17:28:31.624"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.624" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.624" endtime="20220407 17:28:31.624"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.604" endtime="20220407 17:28:31.624"/>
+</iter>
+<iter>
+<var name="${i}">48</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.654" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.624" endtime="20220407 17:28:31.654"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.654" endtime="20220407 17:28:31.654"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.654" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.654" endtime="20220407 17:28:31.654"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.624" endtime="20220407 17:28:31.654"/>
+</iter>
+<iter>
+<var name="${i}">49</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.686" level="INFO">${LinkText} = Feedback</msg>
+<status status="PASS" starttime="20220407 17:28:31.654" endtime="20220407 17:28:31.686"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.686" endtime="20220407 17:28:31.686"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.686" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.686" endtime="20220407 17:28:31.686"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.654" endtime="20220407 17:28:31.686"/>
+</iter>
+<iter>
+<var name="${i}">50</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.724" level="INFO">${LinkText} = Robot Framework - GitHub
+https://github.com › robotframework › robotframework</msg>
+<status status="PASS" starttime="20220407 17:28:31.686" endtime="20220407 17:28:31.724"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.724" endtime="20220407 17:28:31.724"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.724" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.724" endtime="20220407 17:28:31.724"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.686" endtime="20220407 17:28:31.724"/>
+</iter>
+<iter>
+<var name="${i}">51</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.762" level="INFO">${LinkText} = Robot Framework Tutorial - Tutorialspoint
+https://www.tutorialspoint.com › robot_framework</msg>
+<status status="PASS" starttime="20220407 17:28:31.724" endtime="20220407 17:28:31.762"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.762" endtime="20220407 17:28:31.762"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.764" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.763" endtime="20220407 17:28:31.764"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.724" endtime="20220407 17:28:31.764"/>
+</iter>
+<iter>
+<var name="${i}">52</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.796" level="INFO">${LinkText} = PREVIEW
+25:35
+Robot Framework Tutorial | Robot Framework With Python ...
+YouTube · edureka!
+06-Nov-2019</msg>
+<status status="PASS" starttime="20220407 17:28:31.764" endtime="20220407 17:28:31.796"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.796" endtime="20220407 17:28:31.796"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.796" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.796" endtime="20220407 17:28:31.796"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.764" endtime="20220407 17:28:31.796"/>
+</iter>
+<iter>
+<var name="${i}">53</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.825" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.796" endtime="20220407 17:28:31.825"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.825" endtime="20220407 17:28:31.825"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.841" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.825" endtime="20220407 17:28:31.841"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.796" endtime="20220407 17:28:31.841"/>
+</iter>
+<iter>
+<var name="${i}">54</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.857" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.841" endtime="20220407 17:28:31.857"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.857" endtime="20220407 17:28:31.857"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.872" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.857" endtime="20220407 17:28:31.872"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.841" endtime="20220407 17:28:31.872"/>
+</iter>
+<iter>
+<var name="${i}">55</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.888" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.872" endtime="20220407 17:28:31.888"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.888" endtime="20220407 17:28:31.888"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.888" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.888" endtime="20220407 17:28:31.888"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.872" endtime="20220407 17:28:31.888"/>
+</iter>
+<iter>
+<var name="${i}">56</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.925" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.904" endtime="20220407 17:28:31.925"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.925" endtime="20220407 17:28:31.925"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.925" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.925" endtime="20220407 17:28:31.925"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.888" endtime="20220407 17:28:31.925"/>
+</iter>
+<iter>
+<var name="${i}">57</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.960" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.925" endtime="20220407 17:28:31.960"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.960" endtime="20220407 17:28:31.960"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.960" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.960" endtime="20220407 17:28:31.960"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.925" endtime="20220407 17:28:31.960"/>
+</iter>
+<iter>
+<var name="${i}">58</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:31.983" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.960" endtime="20220407 17:28:31.983"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:31.983" endtime="20220407 17:28:31.983"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:31.983" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:31.983" endtime="20220407 17:28:31.983"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.960" endtime="20220407 17:28:31.983"/>
+</iter>
+<iter>
+<var name="${i}">59</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.008" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:31.983" endtime="20220407 17:28:32.008"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.008" endtime="20220407 17:28:32.008"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.008" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.008" endtime="20220407 17:28:32.008"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:31.983" endtime="20220407 17:28:32.008"/>
+</iter>
+<iter>
+<var name="${i}">60</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.045" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.008" endtime="20220407 17:28:32.045"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.045" endtime="20220407 17:28:32.045"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.045" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.045" endtime="20220407 17:28:32.045"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.008" endtime="20220407 17:28:32.045"/>
+</iter>
+<iter>
+<var name="${i}">61</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.064" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.045" endtime="20220407 17:28:32.064"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.064" endtime="20220407 17:28:32.064"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.064" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.064" endtime="20220407 17:28:32.064"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.045" endtime="20220407 17:28:32.064"/>
+</iter>
+<iter>
+<var name="${i}">62</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.105" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.064" endtime="20220407 17:28:32.105"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.105" endtime="20220407 17:28:32.106"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.110" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.106" endtime="20220407 17:28:32.110"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.064" endtime="20220407 17:28:32.110"/>
+</iter>
+<iter>
+<var name="${i}">63</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.157" level="INFO">${LinkText} = PREVIEW
+1:22:40
+Robot Framework Tutorial For Beginners | Robot Framework ...
+YouTube · Mukesh otwani
+10-Feb-2021</msg>
+<status status="PASS" starttime="20220407 17:28:32.110" endtime="20220407 17:28:32.157"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.157" endtime="20220407 17:28:32.157"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.157" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.157" endtime="20220407 17:28:32.157"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.110" endtime="20220407 17:28:32.157"/>
+</iter>
+<iter>
+<var name="${i}">64</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.203" level="INFO">${LinkText} = 27:46
+Part1- Introduction to Robot Framework | Environment Setup ...
+YouTube · SDET- QA Automation Techie
+30-Aug-2019</msg>
+<status status="PASS" starttime="20220407 17:28:32.157" endtime="20220407 17:28:32.203"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.203" endtime="20220407 17:28:32.203"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.203" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.203" endtime="20220407 17:28:32.203"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.157" endtime="20220407 17:28:32.203"/>
+</iter>
+<iter>
+<var name="${i}">65</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.228" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.203" endtime="20220407 17:28:32.228"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.228" endtime="20220407 17:28:32.228"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.228" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.228" endtime="20220407 17:28:32.228"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.203" endtime="20220407 17:28:32.228"/>
+</iter>
+<iter>
+<var name="${i}">66</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.267" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.228" endtime="20220407 17:28:32.267"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.267" endtime="20220407 17:28:32.268"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.268" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.268" endtime="20220407 17:28:32.268"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.228" endtime="20220407 17:28:32.268"/>
+</iter>
+<iter>
+<var name="${i}">67</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.299" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.268" endtime="20220407 17:28:32.299"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.299" endtime="20220407 17:28:32.299"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.299" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.299" endtime="20220407 17:28:32.299"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.268" endtime="20220407 17:28:32.299"/>
+</iter>
+<iter>
+<var name="${i}">68</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.326" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.299" endtime="20220407 17:28:32.326"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.326" endtime="20220407 17:28:32.326"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.326" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.326" endtime="20220407 17:28:32.326"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.299" endtime="20220407 17:28:32.326"/>
+</iter>
+<iter>
+<var name="${i}">69</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.358" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.326" endtime="20220407 17:28:32.358"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.358" endtime="20220407 17:28:32.358"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.358" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.358" endtime="20220407 17:28:32.358"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.326" endtime="20220407 17:28:32.358"/>
+</iter>
+<iter>
+<var name="${i}">70</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.395" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.358" endtime="20220407 17:28:32.396"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.396" endtime="20220407 17:28:32.396"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.396" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.396" endtime="20220407 17:28:32.396"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.358" endtime="20220407 17:28:32.396"/>
+</iter>
+<iter>
+<var name="${i}">71</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.420" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.396" endtime="20220407 17:28:32.420"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.420" endtime="20220407 17:28:32.420"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.420" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.420" endtime="20220407 17:28:32.420"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.396" endtime="20220407 17:28:32.420"/>
+</iter>
+<iter>
+<var name="${i}">72</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.446" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:32.420" endtime="20220407 17:28:32.446"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.447" endtime="20220407 17:28:32.447"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.447" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.447" endtime="20220407 17:28:32.447"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.420" endtime="20220407 17:28:32.447"/>
+</iter>
+<iter>
+<var name="${i}">73</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.478" level="INFO">${LinkText} = View all</msg>
+<status status="PASS" starttime="20220407 17:28:32.447" endtime="20220407 17:28:32.478"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.478" endtime="20220407 17:28:32.478"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.478" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.478" endtime="20220407 17:28:32.478"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.447" endtime="20220407 17:28:32.478"/>
+</iter>
+<iter>
+<var name="${i}">74</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.511" level="INFO">${LinkText} = Basic concepts of Robot Framework - Robocorp
+https://robocorp.com › docs › robot-framework › basics</msg>
+<status status="PASS" starttime="20220407 17:28:32.478" endtime="20220407 17:28:32.511"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.511" endtime="20220407 17:28:32.511"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.511" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.511" endtime="20220407 17:28:32.511"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.478" endtime="20220407 17:28:32.511"/>
+</iter>
+<iter>
+<var name="${i}">75</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.570" level="INFO">${LinkText} = Robot Framework - Wikipedia
+https://en.wikipedia.org › wiki › Robot_Framework</msg>
+<status status="PASS" starttime="20220407 17:28:32.511" endtime="20220407 17:28:32.570"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.570" endtime="20220407 17:28:32.570"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.570" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.570" endtime="20220407 17:28:32.570"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.511" endtime="20220407 17:28:32.570"/>
+</iter>
+<iter>
+<var name="${i}">76</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.598" level="INFO">${LinkText} = Robot Framework in Python - GeeksforGeeks
+https://www.geeksforgeeks.org › robot-framework-in-p...</msg>
+<status status="PASS" starttime="20220407 17:28:32.570" endtime="20220407 17:28:32.598"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.598" endtime="20220407 17:28:32.614"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.614" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.614" endtime="20220407 17:28:32.614"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.570" endtime="20220407 17:28:32.614"/>
+</iter>
+<iter>
+<var name="${i}">77</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.647" level="INFO">${LinkText} = Robot Framework - Google Code
+https://code.google.com › archive › robotframework</msg>
+<status status="PASS" starttime="20220407 17:28:32.614" endtime="20220407 17:28:32.647"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.647" endtime="20220407 17:28:32.648"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.648" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.648" endtime="20220407 17:28:32.648"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.614" endtime="20220407 17:28:32.648"/>
+</iter>
+<iter>
+<var name="${i}">78</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.679" level="INFO">${LinkText} = Robot Framework - Test Automation University
+https://testautomationu.applitools.com › robot-framewo...</msg>
+<status status="PASS" starttime="20220407 17:28:32.648" endtime="20220407 17:28:32.679"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.679" endtime="20220407 17:28:32.679"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.679" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.679" endtime="20220407 17:28:32.679"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.648" endtime="20220407 17:28:32.679"/>
+</iter>
+<iter>
+<var name="${i}">79</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.710" level="INFO">${LinkText} = Cucumber</msg>
+<status status="PASS" starttime="20220407 17:28:32.679" endtime="20220407 17:28:32.710"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.710" endtime="20220407 17:28:32.710"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.710" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.710" endtime="20220407 17:28:32.710"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.679" endtime="20220407 17:28:32.710"/>
+</iter>
+<iter>
+<var name="${i}">80</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.746" level="INFO">${LinkText} = Selenium</msg>
+<status status="PASS" starttime="20220407 17:28:32.710" endtime="20220407 17:28:32.746"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.746" endtime="20220407 17:28:32.748"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.749" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.748" endtime="20220407 17:28:32.749"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.710" endtime="20220407 17:28:32.749"/>
+</iter>
+<iter>
+<var name="${i}">81</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.769" level="INFO">${LinkText} = Watir</msg>
+<status status="PASS" starttime="20220407 17:28:32.749" endtime="20220407 17:28:32.769"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.769" endtime="20220407 17:28:32.769"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.769" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.769" endtime="20220407 17:28:32.769"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.749" endtime="20220407 17:28:32.769"/>
+</iter>
+<iter>
+<var name="${i}">82</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.819" level="INFO">${LinkText} = .NET Framework</msg>
+<status status="PASS" starttime="20220407 17:28:32.769" endtime="20220407 17:28:32.819"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.820" endtime="20220407 17:28:32.820"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.820" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.820" endtime="20220407 17:28:32.820"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.769" endtime="20220407 17:28:32.820"/>
+</iter>
+<iter>
+<var name="${i}">83</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.842" level="INFO">${LinkText} = See more</msg>
+<status status="PASS" starttime="20220407 17:28:32.820" endtime="20220407 17:28:32.842"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.842" endtime="20220407 17:28:32.842"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.858" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.858" endtime="20220407 17:28:32.858"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.820" endtime="20220407 17:28:32.858"/>
+</iter>
+<iter>
+<var name="${i}">84</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.889" level="INFO">${LinkText} = Feedback</msg>
+<status status="PASS" starttime="20220407 17:28:32.858" endtime="20220407 17:28:32.889"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.889" endtime="20220407 17:28:32.889"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.889" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.889" endtime="20220407 17:28:32.889"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.858" endtime="20220407 17:28:32.889"/>
+</iter>
+<iter>
+<var name="${i}">85</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.926" level="INFO">${LinkText} = robot framework python tutorial</msg>
+<status status="PASS" starttime="20220407 17:28:32.889" endtime="20220407 17:28:32.926"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.926" endtime="20220407 17:28:32.927"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.929" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.927" endtime="20220407 17:28:32.929"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.889" endtime="20220407 17:28:32.929"/>
+</iter>
+<iter>
+<var name="${i}">86</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.949" level="INFO">${LinkText} = robotframework-seleniumlibrary</msg>
+<status status="PASS" starttime="20220407 17:28:32.929" endtime="20220407 17:28:32.949"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.949" endtime="20220407 17:28:32.949"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.949" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.949" endtime="20220407 17:28:32.949"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.929" endtime="20220407 17:28:32.949"/>
+</iter>
+<iter>
+<var name="${i}">87</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:32.990" level="INFO">${LinkText} = robot framework tutorial</msg>
+<status status="PASS" starttime="20220407 17:28:32.949" endtime="20220407 17:28:32.990"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:32.991" endtime="20220407 17:28:32.991"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:32.991" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:32.991" endtime="20220407 17:28:32.991"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.949" endtime="20220407 17:28:32.991"/>
+</iter>
+<iter>
+<var name="${i}">88</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.023" level="INFO">${LinkText} = robotframework github</msg>
+<status status="PASS" starttime="20220407 17:28:32.991" endtime="20220407 17:28:33.023"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.023" endtime="20220407 17:28:33.024"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.026" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.024" endtime="20220407 17:28:33.026"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:32.991" endtime="20220407 17:28:33.026"/>
+</iter>
+<iter>
+<var name="${i}">89</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.042" level="INFO">${LinkText} = robotframework pip</msg>
+<status status="PASS" starttime="20220407 17:28:33.026" endtime="20220407 17:28:33.042"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.042" endtime="20220407 17:28:33.042"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.058" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.042" endtime="20220407 17:28:33.058"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.026" endtime="20220407 17:28:33.058"/>
+</iter>
+<iter>
+<var name="${i}">90</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.091" level="INFO">${LinkText} = robotframework documentation</msg>
+<status status="PASS" starttime="20220407 17:28:33.058" endtime="20220407 17:28:33.091"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.091" endtime="20220407 17:28:33.091"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.091" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.091" endtime="20220407 17:28:33.091"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.058" endtime="20220407 17:28:33.091"/>
+</iter>
+<iter>
+<var name="${i}">91</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.121" level="INFO">${LinkText} = robot framework with python</msg>
+<status status="PASS" starttime="20220407 17:28:33.091" endtime="20220407 17:28:33.121"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.121" endtime="20220407 17:28:33.121"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.126" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.121" endtime="20220407 17:28:33.126"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.091" endtime="20220407 17:28:33.126"/>
+</iter>
+<iter>
+<var name="${i}">92</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.142" level="INFO">${LinkText} = robotframework-pdflibrary</msg>
+<status status="PASS" starttime="20220407 17:28:33.127" endtime="20220407 17:28:33.142"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.142" endtime="20220407 17:28:33.142"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.158" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.142" endtime="20220407 17:28:33.158"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.127" endtime="20220407 17:28:33.158"/>
+</iter>
+<iter>
+<var name="${i}">93</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.190" level="INFO">${LinkText} = 2</msg>
+<status status="PASS" starttime="20220407 17:28:33.158" endtime="20220407 17:28:33.190"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.190" endtime="20220407 17:28:33.190"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.190" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.190" endtime="20220407 17:28:33.190"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.158" endtime="20220407 17:28:33.190"/>
+</iter>
+<iter>
+<var name="${i}">94</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.227" level="INFO">${LinkText} = 3</msg>
+<status status="PASS" starttime="20220407 17:28:33.190" endtime="20220407 17:28:33.227"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.227" endtime="20220407 17:28:33.227"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.227" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.227" endtime="20220407 17:28:33.227"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.190" endtime="20220407 17:28:33.227"/>
+</iter>
+<iter>
+<var name="${i}">95</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.266" level="INFO">${LinkText} = 4</msg>
+<status status="PASS" starttime="20220407 17:28:33.227" endtime="20220407 17:28:33.266"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.267" endtime="20220407 17:28:33.267"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.267" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.267" endtime="20220407 17:28:33.267"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.227" endtime="20220407 17:28:33.267"/>
+</iter>
+<iter>
+<var name="${i}">96</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.300" level="INFO">${LinkText} = 5</msg>
+<status status="PASS" starttime="20220407 17:28:33.267" endtime="20220407 17:28:33.300"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.300" endtime="20220407 17:28:33.300"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.300" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.300" endtime="20220407 17:28:33.300"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.267" endtime="20220407 17:28:33.300"/>
+</iter>
+<iter>
+<var name="${i}">97</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.327" level="INFO">${LinkText} = 6</msg>
+<status status="PASS" starttime="20220407 17:28:33.300" endtime="20220407 17:28:33.327"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.327" endtime="20220407 17:28:33.327"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.327" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.327" endtime="20220407 17:28:33.327"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.300" endtime="20220407 17:28:33.327"/>
+</iter>
+<iter>
+<var name="${i}">98</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.359" level="INFO">${LinkText} = 7</msg>
+<status status="PASS" starttime="20220407 17:28:33.327" endtime="20220407 17:28:33.359"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.359" endtime="20220407 17:28:33.359"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.374" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.359" endtime="20220407 17:28:33.374"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.327" endtime="20220407 17:28:33.374"/>
+</iter>
+<iter>
+<var name="${i}">99</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.406" level="INFO">${LinkText} = 8</msg>
+<status status="PASS" starttime="20220407 17:28:33.374" endtime="20220407 17:28:33.406"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.406" endtime="20220407 17:28:33.408"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.408" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.408" endtime="20220407 17:28:33.408"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.374" endtime="20220407 17:28:33.408"/>
+</iter>
+<iter>
+<var name="${i}">100</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.427" level="INFO">${LinkText} = 9</msg>
+<status status="PASS" starttime="20220407 17:28:33.408" endtime="20220407 17:28:33.427"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.427" endtime="20220407 17:28:33.427"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.427" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.427" endtime="20220407 17:28:33.427"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.408" endtime="20220407 17:28:33.427"/>
+</iter>
+<iter>
+<var name="${i}">101</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.457" level="INFO">${LinkText} = 10</msg>
+<status status="PASS" starttime="20220407 17:28:33.427" endtime="20220407 17:28:33.457"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.457" endtime="20220407 17:28:33.457"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.473" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.457" endtime="20220407 17:28:33.473"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.427" endtime="20220407 17:28:33.473"/>
+</iter>
+<iter>
+<var name="${i}">102</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.502" level="INFO">${LinkText} = Next</msg>
+<status status="PASS" starttime="20220407 17:28:33.473" endtime="20220407 17:28:33.502"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.502" endtime="20220407 17:28:33.502"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.502" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.502" endtime="20220407 17:28:33.502"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.473" endtime="20220407 17:28:33.502"/>
+</iter>
+<iter>
+<var name="${i}">103</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.528" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.502" endtime="20220407 17:28:33.528"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.528" endtime="20220407 17:28:33.528"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.528" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.528" endtime="20220407 17:28:33.528"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.502" endtime="20220407 17:28:33.528"/>
+</iter>
+<iter>
+<var name="${i}">104</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.557" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.528" endtime="20220407 17:28:33.557"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.557" endtime="20220407 17:28:33.557"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.573" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.573" endtime="20220407 17:28:33.573"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.528" endtime="20220407 17:28:33.573"/>
+</iter>
+<iter>
+<var name="${i}">105</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.605" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.573" endtime="20220407 17:28:33.605"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.605" endtime="20220407 17:28:33.605"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.605" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.605" endtime="20220407 17:28:33.605"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.573" endtime="20220407 17:28:33.605"/>
+</iter>
+<iter>
+<var name="${i}">106</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.627" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.605" endtime="20220407 17:28:33.627"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.627" endtime="20220407 17:28:33.627"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.627" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.627" endtime="20220407 17:28:33.643"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.605" endtime="20220407 17:28:33.643"/>
+</iter>
+<iter>
+<var name="${i}">107</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.660" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.643" endtime="20220407 17:28:33.660"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.660" endtime="20220407 17:28:33.660"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.660" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.660" endtime="20220407 17:28:33.660"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.643" endtime="20220407 17:28:33.660"/>
+</iter>
+<iter>
+<var name="${i}">108</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.692" level="INFO">${LinkText} = More images</msg>
+<status status="PASS" starttime="20220407 17:28:33.660" endtime="20220407 17:28:33.692"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.692" endtime="20220407 17:28:33.692"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.692" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.692" endtime="20220407 17:28:33.692"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.660" endtime="20220407 17:28:33.692"/>
+</iter>
+<iter>
+<var name="${i}">109</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.727" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.692" endtime="20220407 17:28:33.727"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.727" endtime="20220407 17:28:33.727"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.727" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.727" endtime="20220407 17:28:33.727"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.692" endtime="20220407 17:28:33.727"/>
+</iter>
+<iter>
+<var name="${i}">110</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.759" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.727" endtime="20220407 17:28:33.759"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.759" endtime="20220407 17:28:33.759"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.759" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.759" endtime="20220407 17:28:33.759"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.727" endtime="20220407 17:28:33.759"/>
+</iter>
+<iter>
+<var name="${i}">111</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.791" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.759" endtime="20220407 17:28:33.791"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.791" endtime="20220407 17:28:33.791"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.791" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.791" endtime="20220407 17:28:33.791"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.759" endtime="20220407 17:28:33.791"/>
+</iter>
+<iter>
+<var name="${i}">112</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.817" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.791" endtime="20220407 17:28:33.817"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.817" endtime="20220407 17:28:33.817"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.817" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.817" endtime="20220407 17:28:33.817"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.791" endtime="20220407 17:28:33.817"/>
+</iter>
+<iter>
+<var name="${i}">113</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.849" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.817" endtime="20220407 17:28:33.849"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.849" endtime="20220407 17:28:33.849"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.849" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.849" endtime="20220407 17:28:33.849"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.817" endtime="20220407 17:28:33.849"/>
+</iter>
+<iter>
+<var name="${i}">114</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.880" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.849" endtime="20220407 17:28:33.880"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.880" endtime="20220407 17:28:33.880"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.880" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.880" endtime="20220407 17:28:33.880"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.849" endtime="20220407 17:28:33.880"/>
+</iter>
+<iter>
+<var name="${i}">115</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.911" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:33.880" endtime="20220407 17:28:33.911"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.911" endtime="20220407 17:28:33.911"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.911" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.911" endtime="20220407 17:28:33.911"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.880" endtime="20220407 17:28:33.911"/>
+</iter>
+<iter>
+<var name="${i}">116</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.944" level="INFO">${LinkText} = Wikipedia</msg>
+<status status="PASS" starttime="20220407 17:28:33.911" endtime="20220407 17:28:33.944"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.944" endtime="20220407 17:28:33.944"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.944" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.944" endtime="20220407 17:28:33.944"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.911" endtime="20220407 17:28:33.944"/>
+</iter>
+<iter>
+<var name="${i}">117</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:33.972" level="INFO">${LinkText} = Developer(s)</msg>
+<status status="PASS" starttime="20220407 17:28:33.944" endtime="20220407 17:28:33.972"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:33.972" endtime="20220407 17:28:33.972"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:33.972" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:33.972" endtime="20220407 17:28:33.972"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.944" endtime="20220407 17:28:33.972"/>
+</iter>
+<iter>
+<var name="${i}">118</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.003" level="INFO">${LinkText} = License</msg>
+<status status="PASS" starttime="20220407 17:28:33.972" endtime="20220407 17:28:34.003"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.003" endtime="20220407 17:28:34.003"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.019" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.003" endtime="20220407 17:28:34.019"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:33.972" endtime="20220407 17:28:34.019"/>
+</iter>
+<iter>
+<var name="${i}">119</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.048" level="INFO">${LinkText} = Apache License</msg>
+<status status="PASS" starttime="20220407 17:28:34.019" endtime="20220407 17:28:34.048"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.048" endtime="20220407 17:28:34.048"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.048" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.048" endtime="20220407 17:28:34.048"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.019" endtime="20220407 17:28:34.048"/>
+</iter>
+<iter>
+<var name="${i}">120</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.075" level="INFO">${LinkText} = Stable release</msg>
+<status status="PASS" starttime="20220407 17:28:34.048" endtime="20220407 17:28:34.075"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.075" endtime="20220407 17:28:34.075"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.075" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.075" endtime="20220407 17:28:34.075"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.048" endtime="20220407 17:28:34.075"/>
+</iter>
+<iter>
+<var name="${i}">121</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.109" level="INFO">${LinkText} = Initial release</msg>
+<status status="PASS" starttime="20220407 17:28:34.075" endtime="20220407 17:28:34.109"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.109" endtime="20220407 17:28:34.109"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.109" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.109" endtime="20220407 17:28:34.109"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.075" endtime="20220407 17:28:34.109"/>
+</iter>
+<iter>
+<var name="${i}">122</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.141" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.109" endtime="20220407 17:28:34.141"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.141" endtime="20220407 17:28:34.141"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.141" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.141" endtime="20220407 17:28:34.141"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.109" endtime="20220407 17:28:34.141"/>
+</iter>
+<iter>
+<var name="${i}">123</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.158" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.141" endtime="20220407 17:28:34.158"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.158" endtime="20220407 17:28:34.158"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.174" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.158" endtime="20220407 17:28:34.174"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.141" endtime="20220407 17:28:34.174"/>
+</iter>
+<iter>
+<var name="${i}">124</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.190" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.174" endtime="20220407 17:28:34.190"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.190" endtime="20220407 17:28:34.190"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.190" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.190" endtime="20220407 17:28:34.190"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.174" endtime="20220407 17:28:34.190"/>
+</iter>
+<iter>
+<var name="${i}">125</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.228" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.190" endtime="20220407 17:28:34.228"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.228" endtime="20220407 17:28:34.228"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.228" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.228" endtime="20220407 17:28:34.228"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.190" endtime="20220407 17:28:34.228"/>
+</iter>
+<iter>
+<var name="${i}">126</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.261" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.228" endtime="20220407 17:28:34.261"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.261" endtime="20220407 17:28:34.261"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.261" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.261" endtime="20220407 17:28:34.261"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.228" endtime="20220407 17:28:34.261"/>
+</iter>
+<iter>
+<var name="${i}">127</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.297" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.261" endtime="20220407 17:28:34.297"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.297" endtime="20220407 17:28:34.297"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.297" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.297" endtime="20220407 17:28:34.297"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.261" endtime="20220407 17:28:34.297"/>
+</iter>
+<iter>
+<var name="${i}">128</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.330" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.297" endtime="20220407 17:28:34.330"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.330" endtime="20220407 17:28:34.330"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.330" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.330" endtime="20220407 17:28:34.330"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.297" endtime="20220407 17:28:34.330"/>
+</iter>
+<iter>
+<var name="${i}">129</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.362" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.330" endtime="20220407 17:28:34.362"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.362" endtime="20220407 17:28:34.362"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.362" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.362" endtime="20220407 17:28:34.362"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.330" endtime="20220407 17:28:34.362"/>
+</iter>
+<iter>
+<var name="${i}">130</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.396" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.362" endtime="20220407 17:28:34.396"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.396" endtime="20220407 17:28:34.396"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.396" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.396" endtime="20220407 17:28:34.396"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.362" endtime="20220407 17:28:34.396"/>
+</iter>
+<iter>
+<var name="${i}">131</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.429" level="INFO">${LinkText} = People also search for</msg>
+<status status="PASS" starttime="20220407 17:28:34.396" endtime="20220407 17:28:34.429"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.429" endtime="20220407 17:28:34.429"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.429" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.429" endtime="20220407 17:28:34.429"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.396" endtime="20220407 17:28:34.429"/>
+</iter>
+<iter>
+<var name="${i}">132</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.460" level="INFO">${LinkText} = View 10+ more</msg>
+<status status="PASS" starttime="20220407 17:28:34.429" endtime="20220407 17:28:34.460"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.460" endtime="20220407 17:28:34.460"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.476" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.460" endtime="20220407 17:28:34.476"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.429" endtime="20220407 17:28:34.476"/>
+</iter>
+<iter>
+<var name="${i}">133</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.508" level="INFO">${LinkText} = Selenium</msg>
+<status status="PASS" starttime="20220407 17:28:34.476" endtime="20220407 17:28:34.508"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.508" endtime="20220407 17:28:34.508"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.508" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.508" endtime="20220407 17:28:34.508"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.476" endtime="20220407 17:28:34.508"/>
+</iter>
+<iter>
+<var name="${i}">134</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.545" level="INFO">${LinkText} = Cucumber</msg>
+<status status="PASS" starttime="20220407 17:28:34.508" endtime="20220407 17:28:34.545"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.545" endtime="20220407 17:28:34.545"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.545" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.545" endtime="20220407 17:28:34.545"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.508" endtime="20220407 17:28:34.545"/>
+</iter>
+<iter>
+<var name="${i}">135</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.575" level="INFO">${LinkText} = Appium</msg>
+<status status="PASS" starttime="20220407 17:28:34.545" endtime="20220407 17:28:34.575"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.575" endtime="20220407 17:28:34.575"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.591" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.589" endtime="20220407 17:28:34.591"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.545" endtime="20220407 17:28:34.591"/>
+</iter>
+<iter>
+<var name="${i}">136</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.623" level="INFO">${LinkText} = Watir</msg>
+<status status="PASS" starttime="20220407 17:28:34.591" endtime="20220407 17:28:34.623"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.623" endtime="20220407 17:28:34.624"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.624" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.624" endtime="20220407 17:28:34.624"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.591" endtime="20220407 17:28:34.624"/>
+</iter>
+<iter>
+<var name="${i}">137</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.645" level="INFO">${LinkText} = </msg>
+<status status="PASS" starttime="20220407 17:28:34.624" endtime="20220407 17:28:34.645"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.645" endtime="20220407 17:28:34.645"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.645" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.645" endtime="20220407 17:28:34.645"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.624" endtime="20220407 17:28:34.645"/>
+</iter>
+<iter>
+<var name="${i}">138</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.677" level="INFO">${LinkText} = 560037, Bengaluru, Karnataka - From your IP address</msg>
+<status status="PASS" starttime="20220407 17:28:34.645" endtime="20220407 17:28:34.677"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.677" endtime="20220407 17:28:34.677"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.677" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.677" endtime="20220407 17:28:34.677"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.645" endtime="20220407 17:28:34.677"/>
+</iter>
+<iter>
+<var name="${i}">139</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.708" level="INFO">${LinkText} = Help</msg>
+<status status="PASS" starttime="20220407 17:28:34.677" endtime="20220407 17:28:34.708"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.708" endtime="20220407 17:28:34.708"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.724" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.708" endtime="20220407 17:28:34.724"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.677" endtime="20220407 17:28:34.724"/>
+</iter>
+<iter>
+<var name="${i}">140</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.742" level="INFO">${LinkText} = Send feedback</msg>
+<status status="PASS" starttime="20220407 17:28:34.724" endtime="20220407 17:28:34.742"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.742" endtime="20220407 17:28:34.742"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.758" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.742" endtime="20220407 17:28:34.758"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.724" endtime="20220407 17:28:34.758"/>
+</iter>
+<iter>
+<var name="${i}">141</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.774" level="INFO">${LinkText} = Privacy</msg>
+<status status="PASS" starttime="20220407 17:28:34.758" endtime="20220407 17:28:34.774"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.774" endtime="20220407 17:28:34.774"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.774" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.774" endtime="20220407 17:28:34.774"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.758" endtime="20220407 17:28:34.774"/>
+</iter>
+<iter>
+<var name="${i}">142</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LinkText}</var>
+<arg>xpath:(//a)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.817" level="INFO">${LinkText} = Terms</msg>
+<status status="PASS" starttime="20220407 17:28:34.774" endtime="20220407 17:28:34.817"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${LinkText}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220407 17:28:34.817" endtime="20220407 17:28:34.817"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/testing11</arg>
+<arg>${LinkText}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220407 17:28:34.817" level="INFO" html="true">Appended to file '&lt;a href="file://C:\Users\shajavee\PycharmProjects\Robotframework\testing11"&gt;C:\Users\shajavee\PycharmProjects\Robotframework\testing11&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.817" endtime="20220407 17:28:34.817"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:34.774" endtime="20220407 17:28:34.817"/>
+</iter>
+<status status="PASS" starttime="20220407 17:28:30.169" endtime="20220407 17:28:34.817"/>
+</for>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="rso"]/div[1]/div/div/div/div/div/div/div[1]/a/h3</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:34.817" level="INFO">Clicking element 'xpath://*[@id="rso"]/div[1]/div/div/div/div/div/div/div[1]/a/h3'.</msg>
+<status status="PASS" starttime="20220407 17:28:34.817" endtime="20220407 17:28:36.847"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220407 17:28:41.851" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220407 17:28:36.847" endtime="20220407 17:28:41.851"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>C:/Users/shajavee/PycharmProjects/Robotframework/logo.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220407 17:28:42.030" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="logo.png"&gt;&lt;img src="logo.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220407 17:28:41.851" endtime="20220407 17:28:42.030"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220407 17:28:42.030" endtime="20220407 17:28:44.246"/>
+</kw>
+<status status="PASS" starttime="20220407 17:28:11.562" endtime="20220407 17:28:44.246"/>
+</test>
+<test id="s1-t3" name="github_Valid_Login" line="43">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url1}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220407 17:28:44.246" level="INFO">Opening browser 'chrome' to base url 'https://www.github.com/'.</msg>
+<status status="PASS" starttime="20220407 17:28:44.246" endtime="20220407 17:28:51.086"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220407 17:28:51.086" endtime="20220407 17:28:51.214"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:51.214" level="INFO">Clicking element 'xpath:/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a'.</msg>
+<status status="PASS" starttime="20220407 17:28:51.214" endtime="20220407 17:28:51.795"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:login_field</arg>
+<arg>javeedshaik7852@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:51.795" level="INFO">Typing text 'javeedshaik7852@gmail.com' into text field 'id:login_field'.</msg>
+<status status="PASS" starttime="20220407 17:28:51.795" endtime="20220407 17:28:51.891"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>Javeed@9700</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:51.900" level="INFO">Typing text 'Javeed@9700' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220407 17:28:51.891" endtime="20220407 17:28:52.001"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name:commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220407 17:28:52.001" level="INFO">Clicking button 'name:commit'.</msg>
+<status status="PASS" starttime="20220407 17:28:52.001" endtime="20220407 17:28:52.966"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220407 17:29:02.992" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220407 17:28:52.967" endtime="20220407 17:29:02.992"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:q</arg>
+<arg>javeedshaik7852</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220407 17:29:02.992" level="INFO">Typing text 'javeedshaik7852' into text field 'name:q'.</msg>
+<msg timestamp="20220407 17:29:27.295" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B97413+2389011]
+	Ordinal0 [0x00B29F61+1941345]
+	Ordinal0 [0x00A1C520+836896]
+	Ordinal0 [0x00A10682+788098]
+	Ordinal0 [0x00A10EB8+790200]
+	Ordinal0 [0x00A12752+796498]
+	Ordinal0 [0x00A0C0D9+770265]
+	Ordinal0 [0x00A1D9D0+842192]
+	Ordinal0 [0x00A73AE2+1194722]
+	Ordinal0 [0x00A63F66+1130342]
+	Ordinal0 [0x00A3E546+976198]
+	Ordinal0 [0x00A3F456+980054]
+	GetHandleVerifier [0x00D49632+1727522]
+	GetHandleVerifier [0x00DFBA4D+2457661]
+	GetHandleVerifier [0x00C2EB81+569713]
+	GetHandleVerifier [0x00C2DD76+566118]
+	Ordinal0 [0x00B30B2B+1968939]
+	Ordinal0 [0x00B35988+1989000]
+	Ordinal0 [0x00B35A75+1989237]
+	Ordinal0 [0x00B3ECB1+2026673]
+	BaseThreadInitThunk [0x7523FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77187A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77187A4E+238]
+</msg>
+<msg timestamp="20220407 17:29:27.302" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B97413+2389011]
+	Ordinal0 [0x00B29F61+1941345]
+	Ordinal0 [0x00A1C520+836896]
+	Ordinal0 [0x00A10682+788098]
+	Ordinal0 [0x00A10EB8+790200]
+	Ordinal0 [0x00A12752+796498]
+	Ordinal0 [0x00A0C0D9+770265]
+	Ordinal0 [0x00A1D9D0+842192]
+	Ordinal0 [0x00A73AE2+1194722]
+	Ordinal0 [0x00A63F66+1130342]
+	Ordinal0 [0x00A3E546+976198]
+	Ordinal0 [0x00A3F456+980054]
+	GetHandleVerifier [0x00D49632+1727522]
+	GetHandleVerifier [0x00DFBA4D+2457661]
+	GetHandleVerifier [0x00C2EB81+569713]
+	GetHandleVerifier [0x00C2DD76+566118]
+	Ordinal0 [0x00B30B2B+1968939]
+	Ordinal0 [0x00B35988+1989000]
+	Ordinal0 [0x00B35A75+1989237]
+	Ordinal0 [0x00B3ECB1+2026673]
+	BaseThreadInitThunk [0x7523FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77187A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77187A4E+238]
+</msg>
+<status status="FAIL" starttime="20220407 17:29:02.992" endtime="20220407 17:29:27.306"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="jump-to-suggestion-search-global"]/a/div[3]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220407 17:29:27.306" endtime="20220407 17:29:27.306"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="js-pjax-container"]/div/div[3]/div/ul/li/div[2]/div[1]/div/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220407 17:29:27.306" endtime="20220407 17:29:27.306"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="repo-content-pjax-container"]/div/div/div[3]/div[2]/div[1]/a[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220407 17:29:27.306" endtime="20220407 17:29:27.306"/>
+</kw>
+<status status="FAIL" starttime="20220407 17:28:44.246" endtime="20220407 17:29:27.313">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B97413+2389011]
+	Ordinal0 [0x00B29F61+1941345]
+	Ordinal0 [0x00A1C520+836896]
+	Ordinal0 [0x00A10682+788098]
+	Ordinal0 [0x00A10EB8+790200]
+	Ordinal0 [0x00A12752+796498]
+	Ordinal0 [0x00A0C0D9+770265]
+	Ordinal0 [0x00A1D9D0+842192]
+	Ordinal0 [0x00A73AE2+1194722]
+	Ordinal0 [0x00A63F66+1130342]
+	Ordinal0 [0x00A3E546+976198]
+	Ordinal0 [0x00A3F456+980054]
+	GetHandleVerifier [0x00D49632+1727522]
+	GetHandleVerifier [0x00DFBA4D+2457661]
+	GetHandleVerifier [0x00C2EB81+569713]
+	GetHandleVerifier [0x00C2DD76+566118]
+	Ordinal0 [0x00B30B2B+1968939]
+	Ordinal0 [0x00B35988+1989000]
+	Ordinal0 [0x00B35A75+1989237]
+	Ordinal0 [0x00B3ECB1+2026673]
+	BaseThreadInitThunk [0x7523FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77187A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77187A4E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20220407 17:28:11.393" endtime="20220407 17:29:27.318"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220407 17:29:27.295" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.75)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B97413+2389011]
+	Ordinal0 [0x00B29F61+1941345]
+	Ordinal0 [0x00A1C520+836896]
+	Ordinal0 [0x00A10682+788098]
+	Ordinal0 [0x00A10EB8+790200]
+	Ordinal0 [0x00A12752+796498]
+	Ordinal0 [0x00A0C0D9+770265]
+	Ordinal0 [0x00A1D9D0+842192]
+	Ordinal0 [0x00A73AE2+1194722]
+	Ordinal0 [0x00A63F66+1130342]
+	Ordinal0 [0x00A3E546+976198]
+	Ordinal0 [0x00A3F456+980054]
+	GetHandleVerifier [0x00D49632+1727522]
+	GetHandleVerifier [0x00DFBA4D+2457661]
+	GetHandleVerifier [0x00C2EB81+569713]
+	GetHandleVerifier [0x00C2DD76+566118]
+	Ordinal0 [0x00B30B2B+1968939]
+	Ordinal0 [0x00B35988+1989000]
+	Ordinal0 [0x00B35A75+1989237]
+	Ordinal0 [0x00B3ECB1+2026673]
+	BaseThreadInitThunk [0x7523FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77187A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77187A4E+238]
+</msg>
+</errors>
+</robot>
