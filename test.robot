@@ -12,6 +12,7 @@ ${text}
 
 *** Test Case ***
 Creating_File
+
     create file     C:/Users/shajavee/PycharmProjects/Robotframework/testing11
 Capturing_Links
     open browser    ${url}      ${browser}
@@ -30,9 +31,17 @@ Capturing_Links
      log to console  ${LinkText}
      append to file   C:/Users/shajavee/PycharmProjects/Robotframework/testing11  ${LinkText}
      END
-    click element   xpath://*[@id="rso"]/div[1]/div/div/div/div/div/div/div[1]/a/h3
-    sleep   5
-    capture page screenshot     C:/Users/shajavee/PycharmProjects/Robotframework/logo.png
+     click element   xpath://*[@id="rso"]/div[1]/div/div/div/div/div/div/div[1]/a/h3
+     sleep   5
+DATA
+    ${web}=    get text     xpath://*[@id="app"]/div[5]/div[1]
+    FOR    ${i}   IN  RANGE   ${web}
+             log to console  ${i}
+        APPEND TO FILE    C:/Users/shajavee/PycharmProjects/Robotframework/testing11    ${i}
+
+
+     END
+     capture page screenshot     C:/Users/shajavee/PycharmProjects/Robotframework/logo.png
 
 
 
@@ -54,3 +63,4 @@ github_Valid_Login
      click element   xpath://*[@id="repo-content-pjax-container"]/div/div/div[3]/div[2]/div[1]/a[1]
 #    Press Keys          ${element} CTRL+A+DELETE
 #    click element       xpath:/html/body/div[1]/header/div[6]/details/summary/svg
+     
